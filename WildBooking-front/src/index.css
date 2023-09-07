@@ -1,0 +1,155 @@
+/* Set root font-size @10px equivalent */
+html {
+  font-size: 0.625em;
+  font-size: calc(1em * 0.625);
+  scroll-behavior: smooth;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove focus for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+body, .btnWild {
+  /* min-height: 100vh; */
+  font-size: 1.6rem !important;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  color: #000;
+  /*overflow-x: hidden;*/
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins";
+  font-style: normal;
+}
+
+p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+textarea.form-control {
+  height: auto !important;
+}
+
+header {
+  /* margin-bottom: 300px; */
+}
+
+.btnWild2 {
+  background-color: #0d83ab !important;
+  color: #fff;
+  border-radius: 4px !important;
+  border-color: #0d83ab !important;
+  display: inline-block !important;
+  height: fit-content !important;
+}
+
+.btnWild {
+  /* font-size: 16px !important; */
+  background-color: #0d83ab !important;
+  color: #fff;
+  padding: 0.5em 1.8em !important;
+  border-radius: 4px !important;
+  border-color: #0d83ab !important;
+  display: inline-block !important;
+}
+
+.btnWild:hover {
+  background-color: #fff !important;
+  color: #0d83ab !important;
+}
+
+.btnWild:active{
+  scale: 0.97;
+}
+
+.btnWildOutline {
+  /* font-size: 16px !important; */
+  background-color: #fff !important;
+  color: #0d83ab;
+  padding: 0.5em 1.8em !important;
+  border-radius: 4px !important;
+  border: solid 2px #0d83ab !important;
+  display: inline-block !important;
+}
+
+.btnWildOutline:hover {
+  background-color: #0d83ab !important;
+  color: #fff !important;
+}
+
+/* .btnWildOutline:active{
+  scale: 0.97;
+} */
+
+.btnsecondary {
+  font-size: 16px !important;
+  background-color: #777777 !important;
+  color: #fff;
+  padding: 0.5em 1.8em !important;
+  border-radius: 4px !important;
+  border-color: #4c4c4c !important;
+  display: inline-block !important;
+}
+
+.btnsecondary:hover {
+  background-color: #fff !important;
+  color: #4c4c4c !important;
+}
+
+@media (max-width: 768px) {
+  .btnWild {
+    padding: 0.3em 1.2em !important;
+    border-radius: 4px !important;
+  }
+}

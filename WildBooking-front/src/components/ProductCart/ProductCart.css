@@ -1,0 +1,165 @@
+@media screen and (max-width: 576px){ /* version mobile */
+  .cardContainerMobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 3rem;
+    padding: 2rem;
+    box-shadow: 5px 5px 5px #9dbcd3;
+  }
+
+  .cardLeft{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  p.card-text { /* retirer css par défaut Bootstrap */
+    margin: 0;
+  }
+
+  .imgProduct{
+    width: 10rem;
+    height: 10rem;
+    border: solid #9dbcd3;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    padding: 0.1rem;
+  }
+
+  .qtyInCartProduct{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cardRight{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: end;
+  }
+
+  .hrStyle{
+    width: 11rem;
+    margin-top: 0;
+  }
+
+  .priceProduct{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cardContainerDesktop, .cardContainerTotalDesktop{
+    display: none;
+  }
+
+  .cardContainerTotalMobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 3rem;
+    padding: 2rem;
+    box-shadow: 5px 5px 5px #9dbcd3;
+    width: 100%;
+  }
+}
+
+.hrRecap{
+  display: none;
+}
+@media screen and (max-width: 576px){
+  .imgCard{
+    text-align: center;
+  }
+  .hrRecap{
+    display: block;
+  }
+}
+@media screen and (min-width: 768px){
+  .imgCard{
+    text-align: center;
+  }
+  .hrRecap{
+    display: block !important;
+  }
+}
+@media screen and (min-width: 992px){
+  .imgCard{
+    text-align: start;
+  }
+  .hrRecap{
+    display: none !important;
+  }
+}
+@media screen and (max-width: 992px){
+  .cardRecap{
+    text-align: center;
+  }
+}
+.infoRecap{
+  height: fit-content;
+}
+
+@media screen and (min-width: 577px){ /* version tablette & desktop */
+  .cardContainerMobile, .cardContainerTotalMobile {
+    display: none;
+  }
+
+  .cardContainerDesktop{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    margin: 3rem auto 3rem auto;
+    padding: 2rem;
+    box-shadow: 5px 5px 5px #9dbcd3;
+    width: 80%;
+  }
+
+  p.card-text { /* retirer css par défaut Bootstrap */
+    margin: 0;
+  }
+
+  .imgProduct{
+    width: 10rem;
+    height: 10rem;
+    border: solid #9dbcd3;
+    border-radius: 50%;
+    padding: 0.1rem;
+  }
+
+  .qtyInCartProduct{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cardContainerTotalDesktop{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+    margin: 3rem auto 3rem auto;
+    padding: 2rem;
+    box-shadow: 5px 5px 5px #9dbcd3;
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1024px){ /* version tablette */
+  .cardContainerDesktop, .cardContainerTotalDesktop{
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1440px){ /* version desktop */
+  .cardContainerDesktop, .cardContainerTotalDesktop{
+    width: 60%;
+  }
+}
