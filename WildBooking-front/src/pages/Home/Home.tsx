@@ -13,6 +13,8 @@ import "./home.css";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
+import { Link } from "react-router-dom";
+
 
 const Home = () => {
   const productsStore = useSelector(
@@ -59,7 +61,7 @@ const Home = () => {
         <p className="header_home_title">
           Renting Skis has never been easier before !
         </p>
-        <button className="search_product">Rechercher un produit</button>
+        <Link to="/catalogue"> <button className="search_product">Rechercher un produit</button></Link>
         <SearchProductHome
           handleFindByDateFromHome={handleFindByDateFromHome}
         />

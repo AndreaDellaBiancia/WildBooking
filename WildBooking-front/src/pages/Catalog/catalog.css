@@ -1,13 +1,22 @@
 .catalog_container{
-  margin-top: 20rem;
+  margin-top: 14rem;
 }
 
 .catalog_container h1{
-  font-size: 6rem;
+  font-size: 2.5rem;
 }
 
 .go_back{
   font-weight: 500;
   font-size: 2rem;
   margin-left: 5rem;
+}
+
+@media (min-width: 765px) {
+  .catalog_container{
+    margin-top: 20rem;
+  }
+  .catalog_container h1{
+    font-size: 5rem;
+  }
 }

@@ -15,16 +15,16 @@ import { RootState } from "../../store";
 const NavbarDesktop = () => {
   const userDataStore = useSelector((state: RootState) => state.user.user);
   const userAdminStore = useSelector((state: RootState) => state.user.isAdmin);
-  
+
   const getTokenInLocal = localStorage.getItem("token");
   const cartStore = useSelector((state: RootState) => state.cart.cart);
-  
+
   let totalQtyInCart = 0;
   cartStore.forEach((element) => (totalQtyInCart += element.qtyInCart));
-  
+
   const menuUser = document.querySelector("#menuUserId");
   const menuLogin = document.querySelector("#loginId");
-  
+
   const toggleMenuUser = () => {
     if (menuUser?.classList.contains("d-block")) {
       menuUser.classList.remove("d-block");
@@ -47,16 +47,21 @@ const NavbarDesktop = () => {
 
   window.addEventListener("click", (e) => {
     const el = e.target ? (e.target as HTMLElement) : null;
-    if ((!el?.classList.contains('profilIcon')) && menuUser?.classList.contains("d-block")){
+    if (
+      !el?.classList.contains("profilIcon") &&
+      menuUser?.classList.contains("d-block")
+    ) {
       menuUser.classList.remove("d-block");
       menuUser.classList.add("d-none");
-    };
-    if ((!el?.classList.contains('loginMenu')) && menuLogin?.classList.contains("d-block")){
+    }
+    if (
+      !el?.classList.contains("loginMenu") &&
+      menuLogin?.classList.contains("d-block")
+    ) {
       menuLogin.classList.remove("d-block");
       menuLogin.classList.add("d-none");
-    };
+    }
   });
-
 
   return (
     <>
@@ -73,7 +78,7 @@ const NavbarDesktop = () => {
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand`}>
-                Menu Burger
+                Wild Booking
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
@@ -112,8 +117,13 @@ const NavbarDesktop = () => {
                 )}
                 {!userAdminStore && userDataStore.id !== 0 && (
                   <>
-                    {totalQtyInCart > 0 && <span className="pillCart">{totalQtyInCart}</span>}
-                    <Link to="/panier" className="nav-link mx-4 my-auto linkIcon">
+                    {totalQtyInCart > 0 && (
+                      <span className="pillCart">{totalQtyInCart}</span>
+                    )}
+                    <Link
+                      to="/panier"
+                      className="nav-link mx-4 my-auto linkIcon"
+                    >
                       <img className="panierIcon" src={panier} alt="Panier" />
                     </Link>
                   </>
@@ -132,15 +142,34 @@ const NavbarDesktop = () => {
             </Link>
           </Navbar.Brand>
           <Nav className="justify-content-end flex-grow-1 pe-3">
-            <Nav.Link className="mx-4 my-auto linkIconMobile text-end">
+            {/*       <Nav.Link className="mx-4 my-auto linkIconMobile text-end">
               {!( getTokenInLocal) && (
                 <img className="loginIcon" src={login} alt="Login" onClick={toggleLogin} />
               )} 
-            </Nav.Link>
-            { getTokenInLocal && (
+            </Nav.Link> */}
+            {userDataStore.id === 0 && (
+              /*   <Nav.Link
+                    className="loginMenu nav-link mx-4 linkPage "
+                    onClick={toggleLogin}
+                  > */
+              <Nav.Link className="mx-4 my-auto linkIconMobile text-end">
+                <img
+                  className="loginIcon loginMenu nav-link mx-4 linkPage "
+                  src={login}
+                  alt="Login"
+                  onClick={toggleLogin}
+                />
+              </Nav.Link>
+            )}
+            {getTokenInLocal && (
               <>
-                {totalQtyInCart > 0 && <span className="pillCartMobile">{totalQtyInCart}</span>}
-                <Link to="/panier" className="mx-4 my-auto linkIconMobile text-end">
+                {totalQtyInCart > 0 && (
+                  <span className="pillCartMobile">{totalQtyInCart}</span>
+                )}
+                <Link
+                  to="/panier"
+                  className="mx-4 my-auto linkIconMobile text-end"
+                >
                   <img className="panierIcon" src={panier} alt="Panier" />
                 </Link>
               </>
@@ -150,27 +179,35 @@ const NavbarDesktop = () => {
       </Navbar>
       {/* NAV BOTTOM MOBILE */}
       <Navbar expand="md" className="fixed-bottom py-0" id="mainNavResponsive">
-      <Container fluid className="justify-content-evenly">
-        <Nav className="flex-row pe-3 iconListMobile">
-          <Link to="/" className="my-auto linkIconResponsive text-center">
-            <img className="boutiqueIcon" src={boutique} alt="Accueil" />
-            <br />
-            Accueil
-          </Link>
-          <Link to="/catalogue" className="my-auto linkIconResponsive text-center">
-            <img className="produitIcon" src={produit} alt="Produits" />
-            <br />
-            Produits
-          </Link>
-          {( getTokenInLocal) && (
-            <Nav.Link className="my-auto linkIconResponsive text-center">
-              <img className="profilIcon" src={profil} alt="Profil" onClick={toggleMenuUser}/>
+        <Container fluid className="justify-content-evenly">
+          <Nav className="flex-row pe-3 iconListMobile">
+            <Link to="/" className="my-auto linkIconResponsive text-center">
+              <img className="boutiqueIcon" src={boutique} alt="Accueil" />
               <br />
-              Profil
-            </Nav.Link>
-          )} 
-        </Nav>
-      </Container>
+              Accueil
+            </Link>
+            <Link
+              to="/catalogue"
+              className="my-auto linkIconResponsive text-center"
+            >
+              <img className="produitIcon" src={produit} alt="Produits" />
+              <br />
+              Produits
+            </Link>
+            {getTokenInLocal && (
+              <Nav.Link className="my-auto linkIconResponsive text-center">
+                <img
+                  className="profilIcon"
+                  src={profil}
+                  alt="Profil"
+                  onClick={toggleMenuUser}
+                />
+                <br />
+                Profil
+              </Nav.Link>
+            )}
+          </Nav>
+        </Container>
       </Navbar>
     </>
   );

@@ -187,7 +187,7 @@ function SearchProduct({
   };
 
   return (
-    <div className="col-lg-2 col-md-3 col-sm-10 col-11 ms-5">
+    <div className="col-lg-2 col-md-3 col-sm-10 col-11 ms-5 searchCatalog">
       <form
         className="col-12  m-auto shadow pt-5 pb-4 ml-5 mb-5 mt-4 bg-white rounded search_product_container"
         onSubmit={handleSubmit}

@@ -226,7 +226,7 @@ function Catalog() {
   return (
     <div className="catalog_container">
       <h1 className="text-center mb-5">Catalogue des produits</h1>
-      <div className="row">
+      <div className="row d-flex justify-content-center">
         <SearchProduct
           findBySearchTerm={findBySearchTerm}
           findByCategory={findByCategory}
@@ -237,7 +237,7 @@ function Catalog() {
           dateToHome={dateToHome}
           isSearchFromHome={isSearchFromHome}
         />
-        <div className="col-lg-9 col-md-9 col-sm-10 row d-flex justify-content-center m-auto">
+        <div className="col-lg-9 col-md-9 col-sm-11 row d-flex justify-content-center m-auto">
           {isShowProducts &&
             productsToShow.map((product) => (
               <ProductCard

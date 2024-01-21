@@ -73,18 +73,19 @@ function ProductCard({ product, isSearchFromHome }: IProductProps) {
   };
 
   return (
-    <Card
+    <div
+    
       key={product.id}
       className={
         location.pathname === "/catalogue"
-        ? "col-lg-3 col-md-5 col-sm-10 col-11 m-4 p-4"
-        : "col-12 col-md-2 card_product"
+        ? "col-lg-3 col-md-5 col-sm-10 col-5 m-4 p-4 card_product"
+        : "col-8 col-md-2 card_product" 
       }
       >
       <Card.Img alt={product.name} src={product.image} />
       <Card.Body className="d-flex align-content-between flex-wrap">
         <div>
-          <Card.Title className="fs-2 mb-4">{product.name}</Card.Title>
+          <Card.Title className="fs-2 mb-4 cardTitle">{product.name}</Card.Title>
           <Card.Text>{product.description}</Card.Text>
         </div>
         <Card.Text className="mt-4">
@@ -98,14 +99,14 @@ function ProductCard({ product, isSearchFromHome }: IProductProps) {
               Stock : <span className="fw-bold fs-2 mx-2 align-middle"> {product.quantity} </span>
             </Card.Text>
           </Card.Body>
-          <Button className="btn btn-primary btnWild fs-2 p-3 col-7 m-auto" onClick={handleAddToCart}>
+          <Button className="btn btn-primary  fs-2 p-3 col-11 m-auto btnAdd" onClick={handleAddToCart}>
             Ajouter au panier
           </Button>
         </>
       ) : (
         ""
       )}
-    </Card>
+    </div>
   );
 }
 
